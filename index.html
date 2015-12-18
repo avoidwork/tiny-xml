@@ -12,7 +12,7 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">tiny-xml</h1>
-      <h2 class="project-tagline">Tiny XML encode/decode for Client and Server</h2>
+      <h2 class="project-tagline">Tiny XML utility for Client and Server</h2>
       <a href="https://github.com/avoidwork/tiny-xml" class="btn">View on GitHub</a>
       <a href="https://github.com/avoidwork/tiny-xml/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/avoidwork/tiny-xml/tarball/master" class="btn">Download .tar.gz</a>
@@ -30,7 +30,7 @@
 <a id="example" class="anchor" href="#example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h2>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> <span class="pl-c1">xml</span> <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">"</span>tiny-xml<span class="pl-pds">"</span></span>),
-  serialized <span class="pl-k">=</span> <span class="pl-smi">xml</span>.<span class="pl-en">serialize</span>(<span class="pl-s"><span class="pl-pds">"</span>Hello World!<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>node<span class="pl-pds">"</span></span>),
+  serialized <span class="pl-k">=</span> <span class="pl-smi">xml</span>.<span class="pl-en">serialize</span>({node<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Hello World!<span class="pl-pds">"</span></span>}),
   valid <span class="pl-k">=</span> <span class="pl-smi">xml</span>.<span class="pl-en">valid</span>(serialized),
   obj <span class="pl-k">=</span> valid <span class="pl-k">?</span> <span class="pl-smi">xml</span>.<span class="pl-c1">parse</span>(serialized) <span class="pl-k">:</span> {};
 
