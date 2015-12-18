@@ -6,7 +6,7 @@ Tiny XML utility for Client and Server
 ## Example
 ```javascript
 const xml = require("tiny-xml"),
-  serialized = xml.serialize("Hello World!", "node"),
+  serialized = xml.serialize({node: "Hello World!"}),
   valid = xml.valid(serialized),
   obj = valid ? xml.parse(serialized) : {};
 
