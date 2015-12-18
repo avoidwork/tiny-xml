@@ -6,7 +6,6 @@ Tiny UUID version 4 for Client and Server
 ## Example
 ```javascript
 const xml = require("tiny-xml"),
-  str = "Hello World!",
   serialized = xml.serialize("Hello World!", "node"),
   valid = xml.valid(serialized),
   obj = valid ? xml.parse(serialized) : {};
