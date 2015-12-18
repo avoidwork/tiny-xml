@@ -2,8 +2,8 @@ const cdata = /\&|<|>|\"|\'|\t|\r|\n|\@|\$/,
 	boolean_number_string = /boolean|number|string/;
 
 function iterate (obj, fn, ctx = obj) {
-	Object.keys(obj).forEach((i, idx) => {
-		fn.call(ctx, i, idx);
+	Object.keys(obj).forEach(i => {
+		fn.call(ctx, obj[i], i);
 	});
 }
 
@@ -33,11 +33,11 @@ function serialize (arg, key = "xml", wrap = true, top = true) {
 		x += "null";
 	} else if (larg instanceof Array) {
 		larg.forEach(function (v) {
-			x += serialize(v, "item", typeof v === "object", false);
+			x += serialize(v, "item", true, false);
 		});
 	} else if (larg instanceof Object) {
 		iterate(larg, function (v, k) {
-			x += serialize(v, k, typeof v === "object", false);
+			x += serialize(v, k, true, false);
 		});
 	}
 
