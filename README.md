@@ -1,7 +1,7 @@
 # tiny-xml
 [![build status](https://secure.travis-ci.org/avoidwork/tiny-xml.svg)](http://travis-ci.org/avoidwork/tiny-xml)
 
-Tiny UUID version 4 for Client and Server
+Tiny XML utility for Client and Server
 
 ## Example
 ```javascript
