@@ -11,8 +11,16 @@ function parse (arg) {
 	return new DOMParser().parseFromString(arg, "text/xml");
 }
 
-function node (name, value) {
-	return "<" + name + ">" + cdata.test(value) ? "<![CDATA[" + value + "]]>" : value + "</" + name + ">";
+function node (name = "", value) {
+	let start = "",
+		end = "";
+
+	if (name !== "") {
+		start = "<" + name + ">";
+		end = "</" + name + ">";
+	}
+
+	return start + (cdata.test(value) ? "<![CDATA[" + value + "]]>" : value) + end;
 }
 
 function serialize (arg, key = "xml", wrap = true, top = true) {
@@ -28,7 +36,7 @@ function serialize (arg, key = "xml", wrap = true, top = true) {
 	}
 
 	if (boolean_number_string.test(typeof larg)) {
-		x += node(isNaN(key) ? key : "item", larg);
+		x += node(isNaN(key) ? !top ? key : "" : "item", larg);
 	} else if (larg === null || larg === undefined) {
 		x += "null";
 	} else if (larg instanceof Array) {

@@ -1,6 +1,6 @@
 {
   "name": "tiny-xml",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Tiny XML utility for Client and Server",
   "main": "lib/tiny-xml.js",
   "scripts": {
