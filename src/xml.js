@@ -45,7 +45,7 @@ function serialize (arg, key = "xml", wrap = true, top = true) {
 		});
 	} else if (larg instanceof Object) {
 		iterate(larg, function (v, k) {
-			x += serialize(v, k, true, false);
+			x += boolean_number_string.test(typeof v) ? node(k, v) : serialize(v, k, top, false);
 		});
 	}
 
